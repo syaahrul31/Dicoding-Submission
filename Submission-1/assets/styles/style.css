@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lexend&family=Quicksand:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lexend&family=Quicksand:wght@400;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    padding: auto;
+}
+
+main{
+    padding: 20px;
+    overflow: auto;
+}
+
+header{
+    display: inline;
+}
+
+header div h1{
+    color: beige;
+    text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
+    font-size: 55px;
+    font-family:'Quicksand', sans-serif;
+}
+
+header div p{
+    color: beige;
+    text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.5);
+    margin-top: -25px;
+    font-size: 18px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.jumbotron{
+    text-align: center;
+    padding: 180px;
+    width: 100%;
+    background-size: cover;
+    animation: fade 20s infinite;
+}
+
+@keyframes fade{
+    0%{
+        background-image: url(../img/slide1.jpg);
+    } 25%{
+        background-image: url(../img/slide2.jpg);
+    } 50%{
+        background-image: url(../img/slide3.jpg);
+    } 75%{
+        background-image: url(../img/slide4.jpg);
+    } 100%{
+        background-image: url(../img/slide1.jpg);
+    } 
+}
+
+nav{
+    background-image: linear-gradient(rgb(141, 56, 0), rgb(128, 36, 0));
+    padding:5px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul li{
+    display: inline;
+    list-style-type: none;
+}
+
+nav ul li a{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 32, 51, 0.2);
+    font-family:'Quicksand', sans-serif;
+}
+
+nav ul li a:hover{
+    border-radius: 5px;
+    animation: navigasi 0.5s both;
+}
+
+@keyframes navigasi {
+    from{
+        font-size: 14px;
+    }
+    to{
+        font-size: 16px;
+        background-color: rgb(83, 19, 0);
+    }
+}
+
+#content{
+    float:left;
+    width: 75%;
+    padding: 10px;
+}
+
+.card{
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    font-family:'Quicksand', sans-serif;
+}
+
+.wayang{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.art{
+    margin: 6px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.art:hover{
+    margin: 2px;
+}
+
+.art img{
+    width: 100%;
+}
+
+.art .desc{
+    padding: 5px;
+    text-align: center;
+}
+
+.art .desc p{
+    margin-top: -15px;
+}
+
+#history, #gallery{
+    padding: 10px 50px;
+    text-align: justify;
+}
+
+aside{
+    float: right;
+    width: 25%;
+    padding: 10px;
+}
+
+.myfoto{
+    width: 100%;
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.myfoto:hover{
+    animation-name: frame; 
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes frame {
+    from{
+        border-radius: 50%
+    }
+    to{
+        border-radius: 0%;
+    }
+}
+
+.bio{
+    font-size: 15px;
+}
+
+table{
+    width: auto;
+}
+
+table th{
+    text-align: right;
+}
+
+.time{
+    font-family:'Quicksand', sans-serif;
+    position: relative;
+    object-fit: cover;
+}
+
+.digit{
+    float: left;
+	width: 70px;
+	height: 70px;
+    border-radius: 5%;
+    padding: 5px;
+    margin:  5px;
+    background-color: brown;
+    color: aliceblue;
+    font-size:larger;
+    font-weight: bold;
+    font-family:'Quicksand', sans-serif;
+}
+
+.digit:hover{
+    animation-name: gradasi;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes gradasi {
+    from{
+        background-color: brown;
+        width: 70px;
+	    height: 70px;
+    }
+    to{
+        background-color: rgb(165, 97, 42);
+        width: 75px;
+	    height: 75px;
+    }
+}
+
+.digit p{
+    text-align: center;
+}
+
+footer{
+    background-image: linear-gradient(rgb(141, 56, 0), rgb(128, 36, 0));
+    padding:1px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-family:'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: rgb(255, 253, 164);
+}
+
+@media screen and (max-width:1000px){
+    #content, aside{
+        width: 100%;
+        padding: 0;
+    }
+}
