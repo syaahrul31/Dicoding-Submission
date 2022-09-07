@@ -1,22 +1,13 @@
-//menampung objek berisi data-data buku
 const books = [];
-//mendefinisikan custom event //digunakan sebagai patokan dasar ketika ada perubahan data pada variabel books
 const RENDER_BOOKS = 'render_data_array_books';
+const RESULT_BOOKS = 'result_data_array_books';
 
-//menghasilkan identitas unik
-function generateId(){
-    return +new Date();
+function generateBook(id, title, author, year, isComplete){
+    return {id, title, author, year, isComplete}
 }
 
-//membuat objek baru dari data yang masuk setelah mengisi form input
-function generateBook(id, title, author, year, isComplete){
-    return {
-        id,
-        title,
-        author,
-        year,
-        isComplete
-    }
+function generateId(){
+    return +new Date();
 }
 
 function findBook(bookId){
@@ -95,7 +86,6 @@ function makeBook(bookObject){
     return container;
 }
 
-//menambah data buku
 function addBook(){
     const title = document.getElementById('inputBookTitle').value;
     const author = document.getElementById('inputBookAuthor').value;
@@ -151,18 +141,26 @@ function undoTaskFromCompleted(bookId){
 }
 
 
-//event saat menekan submit -> menyimpan data ke memori
 document.addEventListener('DOMContentLoaded', function(){
     const submitBook = document.getElementById('inputBook');
     submitBook.addEventListener('submit', function(event){
         event.preventDefault();
         addBook();
     });
+
+    const searchBook = document.getElementById('searchBook');
+    searchBook.addEventListener('submit', function(event){
+        event.preventDefault();
+        let key = new FormData(event.target).get("keyword");
+        document.dispatchEvent(
+            new CustomEvent(RESULT_BOOKS, {detail:{key}})
+        );
+    });
+
     if(isStorageExist()){
         loadDataFromStorage();
     }
 });
-
 
 document.addEventListener(RENDER_BOOKS,function(){
     const listUncompleted = document.getElementById('incompleteBookshelfList');
@@ -179,6 +177,8 @@ document.addEventListener(RENDER_BOOKS,function(){
             listUncompleted.append(bookElement);
         }
     }
+
+    const searchBook = document.getElementById('searchBook');
 });
 
 document.addEventListener('click', function(event){
@@ -190,7 +190,22 @@ document.addEventListener('click', function(event){
     }
 });
 
+document.addEventListener(RESULT_BOOKS, function(event){
+    const showBook = document.getElementById('inisearch');
 
+    showBook.innerHTML = "";
+
+    for(bookItem of books){
+        if(bookItem.title.toLowerCase().includes(event.detail.key.toLowerCase())){
+            const bookElement = makeBook(bookItem);
+            if(bookItem.isComplete){
+                showBook.append(bookElement);
+            } else{
+                showBook.append(bookElement);
+            }
+        }
+    }
+});
 
 //CONFIGURASI LOCAL STORAGE ==================================================
 
