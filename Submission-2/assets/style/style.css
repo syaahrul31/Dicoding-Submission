@@ -128,23 +128,7 @@ main {
     margin-right: 10px;
 }
 
-.search_section {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    font-family: 'Lexend';
-    background-color: white;
-}
-
-.search_section > h2 {
-    color: rgb(0, 80, 80);
-}
-
-.search_section > form {
+.book_shelf > form {
     padding: 16px;
     width: 100%;
     display: grid;
@@ -152,14 +136,14 @@ main {
     grid-gap: 10px;
 }
 
-.search_section > form > label {
+.book_shelf > form > label {
     display: flex;
     align-items: center;
     color: rgb(0, 80, 80);
     font-weight: bold;
 }
 
-.search_section > form > input {
+.book_shelf > form > input {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -170,7 +154,7 @@ main {
     border-bottom: 2px solid rgb(206, 206, 206);
 }
 
-.search_section > form > button {
+.book_shelf > form > button {
     background-image: linear-gradient(rgb(0, 209, 216), rgb(0, 204, 211));
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
     color: white;
@@ -181,7 +165,7 @@ main {
     font-weight: bold;
 }
 
-.search_section > form > button:hover{
+.book_shelf > form > button:hover{
     background-image: linear-gradient(rgb(0, 216, 187), rgb(0, 211, 193));
 }
 
@@ -260,4 +244,11 @@ footer {
 
 footer:hover{
     background-image: linear-gradient(rgb(0, 216, 187), rgb(0, 211, 193));
+}
+
+@media screen and (max-width:1000px) {
+    #bookSubmit{
+        width: 100%;
+        padding: 0;
+    }
 }
