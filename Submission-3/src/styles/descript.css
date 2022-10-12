@@ -1,0 +1,22 @@
+.desc-container {
+    max-width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    border-radius: 5px;
+    top: 10px;
+    background-image: linear-gradient(75deg, rgb(222, 228, 227), rgb(245, 226, 217));
+    font-family: Lexend, sans-serif;
+    text-align: center;
+  }
+
+  .desc-container:hover{
+    background-image: linear-gradient(150deg, rgb(222, 228, 227), rgb(245, 226, 217));
+  }
+  
+  .desc-container h2{
+    padding-bottom: 20px;
+  }
+  
+  .desc-container p{
+    font-size: 12px;
+  }
