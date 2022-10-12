@@ -1,2 +1,2 @@
 # Dicoding-Submission
-Berisi File Project Tugas Akhir Kelas
+Kumpulan Project Front End - React Dicoding
