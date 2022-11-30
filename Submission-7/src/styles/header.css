@@ -1,0 +1,40 @@
+header {
+	width: 95%;
+	margin: auto;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.315);
+	background-image: url(../public/images/hero-image_2.jpg);
+	animation: slide 20s infinite ease-in-out;
+	background-size: cover;
+}
+
+header .title-header {
+	padding: 200px;
+	border-radius: 20px;
+	background-image: linear-gradient(rgba(175, 70, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+header .title-header h1 {
+	text-align: center;
+	color: aliceblue;
+	text-shadow: 3px 3px 3px black;
+	font-size: 40px;
+}
+
+@keyframes slide {
+	0% {
+		background-image: url(../public/images/hero-image_1.jpg);
+	}
+	25% {
+		background-image: url(../public/images/hero-image_2.jpg);
+	}
+	50% {
+		background-image: url(../public/images/hero-image_3.jpg);
+	}
+	75% {
+		background-image: url(../public/images/hero-image_4.jpg);
+	}
+	100% {
+		background-image: url(../public/images/hero-image_1.jpg);
+	}
+}

@@ -1,0 +1,68 @@
+#content {
+	width: 95%;
+	margin: auto;
+	border-radius: 20px;
+	background-image: linear-gradient(
+		45deg,
+		rgb(206, 206, 206),
+		rgb(235, 235, 235)
+	);
+	box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+#content h1 {
+	text-align: center;
+	margin: auto;
+	padding: 30px;
+}
+
+#content #cards {
+	display: grid;
+	gap: 20px 20px;
+	margin: 2%;
+}
+
+article {
+	border-radius: 15px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+	background-color: white;
+	box-sizing: border-box;
+}
+
+article:hover {
+	box-shadow: 0px 0px 20px rgba(161, 91, 0, 0.8);
+}
+
+article:focus {
+	outline: 3px dashed rgb(109, 57, 23);
+	border-radius: 15px;
+}
+
+article img {
+	width: 100%;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+article .desc {
+	padding: 5px 25px;
+	text-align: justify;
+}
+
+@media screen and (min-width: 320px) {
+	#content #cards {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#content #cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	#content #cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
